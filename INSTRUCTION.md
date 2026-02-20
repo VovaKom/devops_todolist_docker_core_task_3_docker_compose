@@ -2,7 +2,7 @@
 
 Here are the instructions on how to run and stop containers with docker-compose.
 
-## Requirments
+## Requirements
 Before running the project, make sure you have installed:
 - Docker (version 20+)
 - Docker Compose (v1: docker-compose or v2: docker compose)
@@ -56,6 +56,20 @@ After startup, the application is available at:
 > Web UI:
 > http://localhost:8081
 
+This is the default port mapping defined in docker-compose.yml:
+```yaml
+ports:
+  - "8081:8080"
+```
+
+Where:
+- 8080 — internal container port (Django runs here)
+- 8081 — external host port (used in the browser)
+
+If you changed the port mapping in docker-compose.yml,
+make sure to update the URL accordingly:
+
+Also, you can access the admin panel and API:
 > Admin panel:
 > http://localhost:8081/admin
 

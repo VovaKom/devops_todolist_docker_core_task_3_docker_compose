@@ -23,7 +23,6 @@ services:
       - DB_PORT=3306
   db:
     image: mysql:8
-    container_name: mysql
     ports:
       - "3306:3306"
     volumes:
